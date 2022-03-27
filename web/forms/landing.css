@@ -1,0 +1,25 @@
+body {
+    color: rgb(0, 0, 0);
+}
+
+.title {
+    text-align: center;
+    font-size: 80px;
+}
+
+.subtitle {
+    text-align: left;
+    font-size: 30px;
+}
+
+.comum {
+    text-align: justify;
+}
+
+p {
+    font-family: monospace;
+}
+
+#emojis {
+    font-size: xx-large;
+}
