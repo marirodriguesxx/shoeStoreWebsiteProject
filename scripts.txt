@@ -1,0 +1,100 @@
+CREATE TABLE address (
+	id_local INTEGER NOT NULL,
+	cep_local VARCHAR(10),
+	recipient_local VARCHAR(100),
+	state_local VARCHAR(20),
+	city_local VARCHAR(20),
+	address_local VARCHAR(300),
+	PRIMARY KEY (id_local)
+);
+
+CREATE TABLE product(
+	model_prdct INTEGER NOT NULL,
+	name_prdct VARCHAR(100),
+	antiodour_insoles_prdct BOOLEAN,
+	shock_absorver_prdct BOOLEAN,
+	price_prdct FLOAT(53),
+	closure_prdct VARCHAR(10),
+	brand_prdct VARCHAR(10),
+	material_prdct VARCHAR(10),
+	gender_prdct VARCHAR(10),
+	PRIMARY KEY (model_prdct)
+);
+
+CREATE TABLE inventory(
+	color_invent VARCHAR(20),
+	size_invent INTEGER,
+	prdct_model INTEGER,
+	FOREIGN KEY (prdct_model) REFERENCES product (model_prdct)
+);
+
+CREATE TABLE cart(
+	id_cart INTEGER NOT NULL,
+	pack_cart VARCHAR(10),
+	qtd_cart INTEGER,
+	cost_cart FLOAT(53),
+	prdct_model INTEGER,
+	PRIMARY KEY (id_cart),
+	FOREIGN KEY (prdct_model) REFERENCES product (model_prdct)
+);
+
+CREATE TABLE demand (
+	id_order INTEGER NOT NULL,
+	time_order VARCHAR(10),
+	date_order VARCHAR(10),
+	totalcost_order FLOAT(53),
+	local_id INTEGER,
+	cart_id INTEGER,
+	PRIMARY KEY (id_order),
+	FOREIGN KEY (local_id) REFERENCES address (id_local),
+	FOREIGN KEY (cart_id) REFERENCES cart (id_cart)
+);
+
+CREATE TABLE client (
+	cpf_cli VARCHAR(20),
+	name_cli VARCHAR(100),
+	gender_cli VARCHAR(10),
+	email_cli VARCHAR(100),
+	cel_cli CHAR(11),
+	tel_cli CHAR(11),
+	password_cli VARCHAR(20),
+	local_id INTEGER,
+	order_id INTEGER,
+	PRIMARY KEY (cpf_cli),
+	FOREIGN KEY (local_id) REFERENCES address (id_local),
+	FOREIGN KEY (order_id) REFERENCES demand (id_order)
+);
+
+CREATE TABLE administrator(
+	id_admin INTEGER NOT NULL,
+	email_admin VARCHAR(100),
+	password_admin VARCHAR(20),
+	PRIMARY KEY (id_admin)
+);
+
+CREATE TABLE store(
+	cli_cpf VARCHAR(20),
+	prdct_model INTEGER NOT NULL,
+	admin_id INTEGER NOT NULL,
+	FOREIGN KEY (cli_cpf) REFERENCES client (cpf_cli),
+	FOREIGN KEY (prdct_model) REFERENCES product (model_prdct),
+	FOREIGN KEY (admin_id) REFERENCES administrator (id_admin)
+);
+
+INSERT INTO administrator VALUES(1,'admin@admin.com.br','1234');
+
+INSERT INTO address VALUES(1,'71515081', 'Carol', 'PE', 'Recife', 'Rua 101 Boa viagem');
+
+INSERT INTO product VALUES(1, 'tenis da nasa' ,false, false , 120.50, 'cadarço', 'nasa', 'algodão', 'unissex');
+
+INSERT INTO cart VALUES(1,'present',2,241,1);
+
+INSERT INTO demand VALUES(1,'12:43:24','23/03/2022',241,1,1);
+
+INSERT INTO inventory VALUES('red', 35, 1 );
+
+INSERT INTO client VALUES ('000.111.222-33','Rosilda do Amaral', 'feminino', 'rosilda@rosa.com.br', '9999-0807', '40028922','1234',1,1);
+
+
+
+
