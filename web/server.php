@@ -20,8 +20,10 @@ while ($line = pg_fetch_array($result, null, PGSQL_ASSOC)) {
         echo "\t\t<td>$col_value</td>\n";
     }
     echo "\t</tr>\n";
-}
+} 
 echo "</table>\n";
+
+var_dump($_POST)
 ?>
 
 

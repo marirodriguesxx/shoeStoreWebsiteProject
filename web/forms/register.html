@@ -6,14 +6,15 @@
     </head>
 
     <body>
-
+    <form class="fields" action="../server/register.php" method="post">
+        
         <header class="page-header">
             <div><div style="position:absolute; right:65px; top: 5px; display: inline-block;" class="sc-jfmDQi kiuoul">
-                <a href="#">
+                <a href="client.html">
                     <img src="figuras/profile.png" >
                 </a>
             </div><div style="position:absolute; right:5px; top:5px; display: inline-block;" class="sc-jfmDQi kiuoul">
-                <a href="#">
+                <a href="cart.html">
                     <img src="figuras/cart.png" >
                 </a>
             </div></div>
@@ -23,23 +24,21 @@
 
         <div><div div style="position:absolute; left:300px; display: inline-block;" class="sc-jfmDQi kiuoul">
 
-            <form class="fields">
-                
                 <h2>Personal Information</h2>
 
                 <div class="field">
                     <label>Complete Name</label>
-                    <input required>
+                    <input required type="name" name="completeName">
                 </div>
 
                 <div class="item-field">
                     <label>CPF</label>
-                    <input required>
+                    <input required type="text" name="cpf">
                 </div>
 
                 <div class="item-field">
                     <label>Gender</label>
-                    <select>
+                    <select required name="gender">
                         <option>Male</option>
                         <option>Female</option>
                         <option>Prefer Not to Inform</option>
@@ -48,89 +47,89 @@
 
                 <div class="item-field">
                     <label>E-mail</label>
-                    <input required>
+                    <input required type="email" name="email">
                 </div>
 
                 <div class="item-field">
                     <label>Password</label>
-                    <input type="password" required>
+                    <input required type="password"  name="password">
                 </div>
 
                 <div class="item-field">
                     <label>Mobile Phone</label>
-                    <input required>
+                    <input required type="text" name="mobile">
                 </div>
 
                 <div class="item-field">
                     <label>Landline Phone</label>
-                    <input required>
+                    <input required type="text" name="Landline">
                 </div>
 
-            </form>
+            
 
-        </div><div div div style="position:absolute; right:300px; display: inline-block;" class="sc-jfmDQi kiuoul">
+        </div><div style="position:absolute; right:300px; display: inline-block;" class="sc-jfmDQi kiuoul">
 
-            <form class="fields">
                 
                 <h2>Address</h2>
 
                 <div class="item-field">
                     <label>CEP</label>
-                    <input required>
+                    <input  required type="text" name="cep">
                 </div>
 
                 <div class="item-field">
                     <label>Address</label>
-                    <input required>
+                    <input  required type="text" name="address">
                 </div>
 
                 <div class="item-field">
                     <label>Recipient's Name</label>
-                    <input required>
+                    <input  required type="name" name="recipient">
                 </div>
 
                 <div class="item-field">
                     <label>City</label>
-                    <input required>
+                    <input  required type="text" name="city">
                 </div>
 
                 <div class="item-field">
                     <label>State</label>
-                    <select>
-                        <option>Acre</option>
-                        <option>Alagoas</option>
-                        <option>Amapá</option>
-                        <option>Amazonas</option>
-                        <option>Bahia</option>
-                        <option>Ceará</option>
-                        <option>Espírito Santo</option>
-                        <option>Goiás</option>
-                        <option>Maranhão</option>
-                        <option>Mato Grosso</option>
-                        <option>Mato Grosso do Sul</option>
-                        <option>Minas Gerais</option>
-                        <option>Pará</option>
-                        <option>Paraíba</option>
-                        <option>Paraná</option>
-                        <option>Pernambuco</option>
-                        <option>Piauí</option>
-                        <option>Rio de Janeiro</option>
-                        <option>Rio Grande do Sul</option>
-                        <option>Rondônia</option>
-                        <option>Roraima</option>
-                        <option>Santa Catarina</option>
-                        <option>São Paulo</option>
-                        <option>Sergipe</option>
-                        <option>Tocantins</option>
-                        <option>Feminino</option>
-                        <option>Distrito Federal</option>
+                    <select required name="state">
+                        <option>AC</option>
+                        <option>AL</option>
+                        <option>AP</option>
+                        <option>AM</option>
+                        <option>BA</option>
+                        <option>CE</option>
+                        <option>ES</option>
+                        <option>GO</option>
+                        <option>MA</option>
+                        <option>MT</option>
+                        <option>MS</option>
+                        <option>MG</option>
+                        <option>PA</option>
+                        <option>PB</option>
+                        <option>PR</option>
+                        <option>PE</option>
+                        <option>PI</option>
+                        <option>RJ</option>
+                        <option>RN</option>
+                        <option>RO</option>
+                        <option>RR</option>
+                        <option>SC</option>
+                        <option>SP</option>
+                        <option>SE</option>
+                        <option>TO</option>
+                        <option>DF</option>
                     </select>
                 </div>
-            </form>
 
         </div></div>
+        
+        <div style="position:absolute; left: 650px; bottom: 50px; ">
+            <input type=image src=figuras/confirm.png alt="confirm" name="submit" >
+        </div>
 
-
-
+    </form>
     </body>
 </html>
